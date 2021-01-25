@@ -1,0 +1,32 @@
+@import url('../fonts/fonts.css');
+
+@mixin createblock($width, $height, $display) {
+    width: $width;
+    height: $height;
+    display: $display;
+}
+@mixin make-background($background, $position,$size ) {
+    background: $background;
+    background-position: $position;
+    background-repeat: no-repeat;
+    background-size: $size;
+}
+@mixin make-button($color){
+    background-color: $color;
+    border-radius: 40px;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+@mixin roboto-300 {
+    font-family: 'Roboto-300',sans-serif;
+}
+@mixin montserrat-700{
+    font-family: 'Montserrat-700', sans-serif;
+}
+@mixin montserrat-400{
+    font-family: 'Montserrat-400', sans-serif;
+}
+    
