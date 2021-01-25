@@ -1,0 +1,828 @@
+@import './base/reset';
+@import url(./fonts/fonts.css);
+@import './base/variables';
+@import './base/mixins';
+
+.title{
+    @include montserrat-700;
+    text-align: center;
+    font-size: 22px;
+    line-height: 27px;
+    color: #444444;
+}
+.subtitle{
+    @include roboto-300;
+    font-size: 14px;
+    line-height: 14px;
+    color: #666666;
+}
+.header{
+    @include createblock(100%, 540px, flex);
+    min-width: 320px;
+    min-height: 540px;
+    flex-flow: column;
+    
+    @include make-background (url(./images/Background-mobile.png), center 0, cover);
+    margin: 0 auto;
+    &__menu{
+        display: flex;
+        width: 100%;
+        height: 30%;
+        flex-flow: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+
+        &_logo{
+            font-family: 'Montserrat-300', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 24px;
+            color: #FFFFFF;
+        }
+
+        &_button{
+            @include make-button(transparent);
+            @include montserrat-400;
+            width: 90px;
+            height: 36px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+        &_button:hover{
+            border-radius: 40px;
+            border: 2px solid #FFFFFF;
+        }
+    }
+    &__title{
+        padding-top: 26px;
+        text-align: center;
+        @include montserrat-700;
+        color: #FFFFFF;
+        font-size: 30px;
+        line-height: 37px;
+    }
+    &__subtitle{
+        margin: 0 auto;
+        width: 80%;
+        padding-top: 6px;
+        text-align: center;
+        @include roboto-300;
+        font-size: 18px;
+        line-height: 24px;
+        color: #FFFFFF ;
+    }
+    &__button{
+        @include createblock(280px, 40px, block);
+        @include make-button(#FF4E50);
+        @include montserrat-700; 
+        margin: 15px auto 0 auto;
+        border-radius: 40px;
+    }
+    &__button:hover{
+        background-color: transparent;
+        border: 2px solid #FFFFFF;
+    }
+}
+
+.content{
+    margin: 35px 10px 0 10px;
+    
+}
+
+.works{
+    overflow: hidden;
+    @include createblock(100%,781px,flex);
+    flex-flow: column;
+    margin: 0 auto;
+    min-width: 300px;
+    &__card{
+        padding: 0 0 0  20px;
+        width: 100%;
+        height: 30%;
+        border-radius: 4px;
+        margin-top: 10px;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 100%;
+
+    }
+    &__card_button{
+        @include make-button(#FF4E50);
+        width: 70px;
+        height: 20px;
+        padding-top: 4px;
+        @include montserrat-400;
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: 2px;
+        margin-top: 64px;
+        &:hover{
+            border: 2px solid #ffffff;
+            background-color: transparent;
+        }
+    }
+    &__card1{
+        margin-top: 15px;
+        @include make-background(url(./images/Step1.png),0 0, cover);
+    }
+    &__card2{
+        @include make-background(url(./images/Step2.png),0 0, cover);
+        grid-template-rows: 1.5fr 0.5fr 1fr;
+        &_button{
+            margin-top: 95px;
+        }
+    }
+    &__card3{
+        @include make-background(url(./images/Step3.png),0 0, cover);
+    }
+    &__card_title{
+        color: #FFFFFF;
+        font-size: 24px;
+        line-height: 15px;
+        text-align: left;
+        margin-top: 25px;
+    }
+    &__card_subtitle{
+        @include roboto-300;
+        width: 90%;
+        font-size: 14px;
+        line-height: 14px;
+        color: #E3E3E3;
+        padding-top: 25px;
+        padding-bottom: 16px;
+    }
+}
+.partners{
+    margin-top: 36px;
+    @include createblock(100%, auto, flex);
+    justify-content: center;
+    flex-flow: column;
+    max-width: 940px;
+    &__cards{
+        margin: 15px 32px auto 32px;
+        &_card{
+            margin-top: 15px;
+        }
+        &_title{
+            margin-top: 17px;
+            font-size: 14px;
+        }
+        &_subtitle{
+            margin-top: 12px;
+            text-align: center;
+        }
+    }
+    &__avatar{
+        @include createblock(120px,120px,block);
+        border-radius: 50%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: row-reverse;
+        align-items: flex-end;
+        &_one{
+            @include make-background(url(./images/avatar1.png),unset,unset);
+        }
+        &_two{
+            @include make-background(url(./images/avatar2.png),unset,unset);
+        }
+        &_three{
+            @include make-background(url(./images/avatar3.png),unset,unset);
+        }
+        &_four{
+            @include make-background(url(./images/avatar4.png),unset,unset);
+        }
+        
+        &_icon{
+            @include createblock(40px, 40px, block);
+            @include make-background(#ffffff, unset, unset);
+            position: relative;
+            border-radius: 50%;
+            &::after{
+                content: " ";
+                @include createblock(32px,32px, block);
+                border-radius: 50%;
+                margin: auto;
+                position: absolute;
+                top: 0; left: 0; bottom: 0; right: 0;
+            }
+            &_one::after{
+                @include make-background(url(./images/icon1.png) #FF4E50 ,center,70%);
+            }
+            &_two::after{
+                @include make-background(url(./images/icon2.png) #FFA710,center,70%);
+            }
+            &_three::after{
+                @include make-background(url(./images/icon3.png) #19D4CA,center,70%);
+            }
+            &_four::after{
+                @include make-background(url(./images/icon4.png) #667DF3,center,70%);
+            }
+        }
+    }
+    &__button{
+        @include make-button(transparent);
+        width: 280px;
+        height: 40px;
+        color: #FF4E50;
+        border: 2px solid #FF4E50;
+        margin: 36px auto 0;
+        @include montserrat-700;
+        font-size: 14px;
+        line-height: 17px;
+        &:hover{
+            color: #ffffff;
+            background-color: #FF4E50;
+        }
+    }
+}
+.activity{
+    @include createblock(100%,unset,flex);
+    flex-flow: column;
+    margin-top: 35px;
+    &__cards{
+        display: grid;
+        margin-top: 35px;
+        grid-template-rows: repeat(7,1fr);
+        row-gap: 10px;
+        &_card{
+            @include createblock(100%,120px,flex);
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            &_title{
+                color: #FFFFFF;
+            }
+            &_card-1{
+                @include make-background(url(./images/active1.png),0 0, cover);
+            }
+            &_card-2{
+                @include make-background(url(./images/active2.png),0 0, cover);
+            }
+            &_card-3{
+                @include make-background(url(./images/active3.png),0 0, cover);
+            }
+            &_card-4{
+                @include make-background(url(./images/active4.png),0 0, cover);
+            }
+            &_card-5{
+                @include make-background(url(./images/active5.png),0 0, cover);
+            }
+            &_card-6{
+                @include make-background(url(./images/active6.png),0 0, cover);
+            }
+            &_card-7{
+                @include make-background(url(./images/active7.png),0 0, cover);
+            }
+        }
+    }
+}
+.create{
+    width: 100%;
+    margin-top: 35px;
+    &__subtitle{
+        text-align: center;
+        font-size: 18px;
+        padding-top: 10px;
+    }
+    &__search{
+        @include createblock(100%, 90px, flex);
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+    &__search > input{
+        @include createblock(280px, 40px, block);
+        background: #FFFFFF;
+        border: 1px solid #D4D4D4;
+        box-sizing: border-box;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+        border-radius: 3px;
+        padding-left: 15px;
+    }
+    &__search > input:focus{
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+        border: 1px solid #D4D4D4;
+        outline: none;
+    }
+    &__search > input::placeholder{
+        @include roboto-300;
+        font-size: 14px;
+        line-height: 16px;
+        color: #999999;
+    }
+    &__search > button{
+        @include make-button(#FF4E50);
+        @include montserrat-700;
+        width: 280px;
+        height: 40px;
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+    &__search > button:hover{
+        border: 2px solid #FF4E50;
+        background-color: #fff;
+        color: #FF4E50;
+    }
+
+}
+.footer{
+    @include createblock(100%, auto, flex);
+    flex-flow: column;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    &::before{
+        content: " ";
+        width: 100%;
+        height: 2px;
+        background-color: #FF4E50;
+    }
+    &__logo{
+        @include montserrat-400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #FF4E50;
+        padding-top: 21px;
+        text-align: center;
+    }
+    &__title{
+        font-size: 14px;
+        line-height: 17px;
+        padding-top: 13px;
+    }
+    &__subtitle{
+        @include montserrat-400;
+        letter-spacing: 1px;
+        font-size: 10px;
+        line-height: 12px;
+        color: #CCCCCC;
+        padding-top: 15px;
+    }
+    &__left{
+        width: 100%;
+    }
+    &__company{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        & ol{
+            display: flex;
+            width: 60%;
+            flex-flow: wrap;
+            margin: 0 auto;
+            justify-content: center;
+            & > li > a{
+                text-decoration: none;
+                @include roboto-300;
+                font-size: 14px;
+                line-height: 26px;
+                color: #999999;
+                padding-left: 10px;
+            }
+        }
+    }
+    &__right{
+        width: 100%;
+        text-align: center;
+    }
+    &__designer > img{
+        padding-top: 7px;
+        padding-bottom: 22px;
+    }
+
+   
+}
+@media (min-width:428px) and (max-width: 768px){
+    .header{
+        @include createblock(100%, 700px, flex);
+        @include make-background (url(./images/Background-large.png), center center, cover);
+       
+        &__menu{
+            @include createblock(100%, auto, flex);
+            flex-flow: row;
+            padding: 40px 50px 0;
+        }
+        &__title{
+            padding-top: 147px;
+            font-size: 52px;
+            line-height: 63px;
+        }
+        &__subtitle{
+            padding-top: 29px;
+            font-size: 24px;
+        }
+        &__button{
+            @include createblock(255px, 40px, block);
+            @include make-button(#FF4E50);
+            @include montserrat-700; 
+            margin: 33px auto 0 auto;  
+        }
+    }
+    .content{
+        margin: 95px 10px 0 10px;
+    }
+    .works{
+        @include createblock(100%,auto,flex); 
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        &__title{
+           display: block;
+           width: 100%;
+           
+        }
+        &__card{
+            width: 32%;
+            height: 400px;
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            align-content: flex-end;
+            justify-content: flex-end;
+            background-position: center 0;
+            &_title{
+                margin-top: 48px;
+            }
+        }
+        &__card2 > .title{
+            margin-top: 17px;
+        }
+    }
+    .partners{
+        margin: 95px 0 0;
+        &__cards{
+            margin: 0 auto; 
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            &_card{
+                width: 50%;
+                margin-top: 35px;
+            }
+        }
+        &__button{
+            width: 180px;
+            height: 40px;
+        }
+        
+    }
+    .activity{
+        margin-top: 95px;
+        max-width: 940px;
+        height: 1031px;
+        &__cards{
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 100%;
+            &_card{
+                height: 100%;
+                background-position: center 0;
+                background-size: cover;
+            }
+            &_card_card-1,&_card_card-2,&_card_card-3{
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+            &_card_card-1{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                background-image: url(./images/bigSport.png);
+            }
+            &_card_card-2{
+                grid-column-start: 2;
+                grid-column-end: 3;
+                background-image: url(./images/bigHealath.png);
+            }
+            &_card_card-3{
+                background-image: url(./images/bigExtreme.png);
+            }
+            &_card_card-4{
+                background-image: url(./images/bigGames.png);
+            }
+            &_card_card-5{
+                grid-column-start: 2;
+                grid-column-end: 4;
+                background-image: url(./images/bigCulture.png);
+            }
+            &_card_card-6{
+                grid-column-start: 1;
+                grid-column-end: 3;
+                background-image: url(./images/bigspa.png);
+            }
+            &_card_card-7{
+                background-image: url(./images/bigTrevels.png);
+
+            }
+        }
+
+
+    }
+    .create{
+        margin-top: 95px;
+        &__subtitle{
+            padding-top: 43px;
+        }
+        &__search{
+            flex-direction: row;
+            width: 65%;
+            min-width: 482px;
+            margin: 0 auto;
+            justify-content: space-between;
+            margin-top: 25px;
+            & > input{
+                width: 300px;
+            }
+            & > button{
+                width: 172px;
+                margin: 0;
+            }
+        }
+    }
+    .footer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        &::before{
+            position: absolute;
+            top: 0;
+        }
+        &__left, &__right{
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            height: 100%;
+            justify-content: space-between;
+        }
+        &__left{
+            margin: 40px auto auto 40px;
+        }
+        &__right{
+            margin: 40px 40px auto auto;
+        }
+        &__logo, &__company, &__partners, &__designer{
+            display: flex;
+            width: 40%;
+            justify-content: space-between;
+        }
+        &__company{
+            text-align-last: left;
+            > ol{
+                width: unset;
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 11px 0;
+                & > li > a{
+                    padding-left: 0;
+                }
+            }
+        } 
+        &__designer{
+            flex-direction: column;
+            & > img{
+                margin: 0 auto;
+            }
+        }
+        &__subtitle, &__title, &__logo{
+            padding: 0;
+        }
+
+    } 
+}
+
+
+
+@media screen and (min-width:769px){
+    .header{
+        height: 700px;
+        @include make-background (url(./images/Background-large.png), center 0, cover);
+        &__menu{
+            margin: 0 auto;
+            @include createblock(70%, auto, flex);
+            flex-flow: row;
+            padding-top: 40px;
+        }
+        &__title{
+            padding-top: 147px;
+            font-size: 52px;
+            line-height: 63px;
+        }
+        &__subtitle{
+            padding-top: 29px;
+            font-size: 24px;
+        }
+        &__button{
+            @include createblock(255px, 40px, block);
+            @include make-button(#FF4E50);
+            @include montserrat-700; 
+            margin: 33px auto 0 auto;  
+        }
+       
+    }
+    .content{
+        margin: 95px auto;
+        max-width: 940px;
+    }
+    .works{
+        @include createblock(100%,auto,flex); 
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+           
+        &__title{
+           display: block;
+           width: 100%;
+           font-size: 26px;
+           line-height: 32px;
+           
+        }
+        &__card{
+            width: 32%;
+            height: 400px;
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            align-content: flex-end;
+            justify-content: flex-end;
+            background-position: center 0;
+            &_title{
+                margin-top: 48px;
+                line-height: 26px;
+            }
+        }
+        &__card2 > .title{
+            margin-top: 17px;
+        }
+     
+       
+    }
+    .partners{
+        margin-top: 95px 0 0;
+        &__title{
+            font-size: 26px;
+            line-height: 32px;
+        }
+        &__cards{
+            margin: 0 auto; 
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            &_card{
+                width: 25%;
+                margin-top: 35px;
+            }
+        }
+        &__button{
+            width: 180px;
+            height: 40px;
+        }
+        
+    }
+    .activity{
+        margin-top: 95px;
+        max-width: 940px;
+        height: 1031px;
+        &__title{
+            font-size: 26px;
+            line-height: 32px;
+        }
+        &__cards{
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 100%;
+            &_card{
+                height: 100%;
+                background-position: center 0;
+                background-size: cover;
+            }
+            &_card_card-1,&_card_card-2,&_card_card-3{
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+            &_card_card-1{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                background-image: url(./images/bigSport.png);
+            }
+            &_card_card-2{
+                grid-column-start: 2;
+                grid-column-end: 3;
+                background-image: url(./images/bigHealath.png);
+            }
+            &_card_card-3{
+                background-image: url(./images/bigExtreme.png);
+            }
+            &_card_card-4{
+                background-image: url(./images/bigGames.png);
+            }
+            &_card_card-5{
+                grid-column-start: 2;
+                grid-column-end: 4;
+                background-image: url(./images/bigCulture.png);
+            }
+            &_card_card-6{
+                grid-column-start: 1;
+                grid-column-end: 3;
+                background-image: url(./images/bigspa.png);
+            }
+            &_card_card-7{
+                background-image: url(./images/bigTrevels.png);
+
+            }
+        }
+
+
+    }
+    .create{
+        &__title{
+            font-size: 26px;
+            line-height: 32px;
+        }
+        margin-top: 95px;
+        &__subtitle{
+            padding-top: 43px;
+        }
+        &__search{
+            flex-direction: row;
+            width: 50%;
+            min-width: 482px;
+            margin: 0 auto;
+            justify-content: space-between;
+            margin-top: 25px;
+            & > input{
+                width: 300px;
+            }
+            & > button{
+                width: 172px;
+                margin: 0;
+            }
+        }
+    }
+    .footer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        &::before{
+            position: absolute;
+            top: 0;
+        }
+        &__left, &__right{
+            display: flex;
+            flex-direction: row;
+            width: 40%;
+            height: 100%;
+            justify-content: space-between;
+           
+        }
+        &__left{
+            margin-top: 40px;
+            justify-content: flex-end;
+        }
+        &__right{
+            margin-top: -95px;
+        }
+        &__logo, &__company, &__partners, &__designer{
+            display: flex;
+            width: 50%;
+            justify-content: space-between;
+            
+        }
+        &__company{
+            text-align-last: left;
+            > ol{
+                width: unset;
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 11px 0 20px 0;
+                & > li > a{
+                    padding-left: 0;
+                }
+            }
+        } 
+        &__designer{
+            flex-direction: column;
+            & > img{
+                margin: 0 auto;
+            }
+        }
+        &__subtitle, &__title, &__logo{
+            padding: 0;
+        }
+
+    }
+   
+}
